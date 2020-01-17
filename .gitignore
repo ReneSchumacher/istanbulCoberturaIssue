@@ -1,0 +1,4 @@
+dist/
+testrun/
+sourcemaps/
+node_modules/
