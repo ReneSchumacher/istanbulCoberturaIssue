@@ -86,7 +86,7 @@ function prepareTest(cb) {
 exports.prepareTest = series(this.compile, this.compileTests, prepareTest);
 
 function test(cb) {
-    if (shell.exec('node ./node_modules/nyc/bin/nyc.js -t ./testrun/.nyc_output --report-dir ./testrun/coverage -a -x gulpfile.js -x test/** -x testrun/coverage/** -x sourcemaps/** --exclude-after-remap true -r cobertura -r text -r html ./node_modules/.bin/mocha --recursive ./testrun/test').code != 0) {
+    if (shell.exec('node ./node_modules/nyc/bin/nyc.js -t ./testrun/.nyc_output --report-dir ./testrun/coverage -a -x gulpfile.js -x test/** -x testrun/coverage/** -r cobertura -r text -r html ./node_modules/.bin/mocha --recursive ./testrun/test').code != 0) {
             let err = new Error('Tests failed!');
         err['showStack'] = false;
         cb(err);
